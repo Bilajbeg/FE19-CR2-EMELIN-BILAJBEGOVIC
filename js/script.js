@@ -87,6 +87,7 @@ function updateTaskDisplay() {
 		
 	const taskElement = document.createElement("div");
 	taskElement.className = "card";
+    
 	taskElement.innerHTML = `
 	<div class="card-header">
 	  <h5 class="title">TASK</h5>
@@ -100,7 +101,9 @@ function updateTaskDisplay() {
 	<div class="card-body">
 	  <h5 class="card-title">${task.name}</h5>
 	  <p class="card-description">${task.notiz}</p>
+
 	  <hr class="line"/>
+
 	  <p class="card-importance importanceBtn">
 		<i class="fa-solid fa-triangle-exclamation"></i>
 		Priority level:
@@ -108,19 +111,24 @@ function updateTaskDisplay() {
 		  ${task.importance}
 		</button>
 	  </p>
+
 	  <p class="card-deadline">
-		<i class="fa-sharp fa-solid fa-calendar-days"></i> Deadline: 27.01.2022
+		<i class="fa-sharp fa-solid fa-calendar-days"></i> Deadline: 12.06.2023
 	  </p>
+
 	  <p class="card-duration">
 		<i class="fa-sharp fa-regular fa-clock"></i> Duration: ${task.duration} min
 	  </p>
-	  <hr class="line" />
+
+	  <hr class="line"/>
+
 	  <button type="button" class="btn btn-danger">
-		<i class="fa-solid fa-trash-can"></i> Delete
-	  </button>
+		<i class="fa-solid fa-trash-can"></i>Delete
+        </button>
+
 	  <button type="button" class="btn btn-success">
-		<i class="fa-regular fa-circle-check"></i> Done
-	  </button>
+		<i class="fa-regular fa-circle-check"></i>Done
+        </button>
 	</div>
 	`;
 
@@ -196,46 +204,3 @@ function getRandomInterval() {
 
 setInterval(incrementNumber, getRandomInterval());
 
-
-/* for (let task of tasks) {
-    document.getElementById("result").innerHTML += `
-    <div class="card" style="width: 18rem;">
-    <img src="${task.picture}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">${task.name}</h5>
-      <h6 class="card-title">${task.notiz}</h6>
-      <p class="card-text myLikes">${task.likes}</p>
-      <a class="btn btn-primary myBtn">Like</a>
-      <a class="btn btn-success detailsBtn">Details</a>
-    </div>
-  </div>
-    `;
-}
-
-let btns = document.getElementsByClassName("myBtn");
-
-
-for (let i in Array.from(btns)) {
-    console.log(i)
-    btns[i].addEventListener("click", function() {
-        tasks[i].likes++;
-        document.getElementsByClassName("myLikes")[i].innerHTML = tasks[i].likes;
-    })
-}
-
-let detailsBtns = document.getElementsByClassName("detailsBtn");
-
-for (let i = 0; i < btns.length; i++) {
-    detailsBtns[i].addEventListener("click", function() {
-        document.getElementById("details").innerHTML = `
-        <div class="card" style="width: 100%;">
-        <img src="${tasks[i].picture}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${tasks[i].name}</h5>
-          <h6 class="card-title">${tasks[i].notiz}</h6>
-          <p class="card-text myLikes">${tasks[i].likes}</p>
-        </div>
-      </div>
-        `;
-    })
-} */
