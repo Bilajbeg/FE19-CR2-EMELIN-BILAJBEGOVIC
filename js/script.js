@@ -1,47 +1,42 @@
 let users = [
 {
-    name: "John",
-    age: 20,
+    name: "Waking up morning<br>",
+    age: "Washing face and teeth!!!",
     likes: 3,
     picture: "/img/img_2_tasks.jpg"
 },{
-    name: "John",
-    age: 20,
+    name: "Morning run 30min.",
+    age: "Running around the park",
     likes: 3,
     picture: "/img/img_2_tasks.jpg"
 },{
-    name: "John",
-    age: 20,
+    name: "Making breakfast",
+    age: "Muesli with fruit",
     likes: 3,
     picture: "/img/img_2_tasks.jpg"
 }, {
-    name: "John",
-    age: 20,
-    likes: 3,
-    picture: "/img/img_2_tasks.jpg"
-},{
-    name: "John",
-    age: 20,
+    name: "Going to work",
+    age: "Buy cup of coffee",
     likes: 3,
     picture: "/img/img_2_tasks.jpg"
 }, {
-    name: "Mary",
-    age: 21,
+    name: "After work - Fitness",
+    age: "Cardio training 1hour",
     likes: 5,
     picture: "/img/img_2_tasks.jpg"
 }, {
-    name: "Mark",
-    age: 30,
+    name: "Shopping",
+    age: "Avenue Mall",
     likes: 10,
     picture: "/img/img_2_tasks.jpg"
 }, {
-    name: "Mark",
-    age: 30,
+    name: "Dinner with family",
+    age: "Indian restaurant",
     likes: 10,
     picture: "/img/img_2_tasks.jpg"
 }, {
-    name: "Mark",
-    age: 30,
+    name: "Reading a book",
+    age: "Before sleep read something",
     likes: 10,
     picture: "/img/img_2_tasks.jpg"
 }
@@ -52,7 +47,8 @@ for (let user of users) {
     <div class="card" style="width: 18rem;">
     <img src="${user.picture}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">${user.name}, ${user.age}</h5>
+      <h5 class="card-title">${user.name}</h5>
+      <h6 class="card-title">${user.age}</h6>
       <p class="card-text myLikes">${user.likes}</p>
       <a class="btn btn-primary myBtn">Like</a>
       <a class="btn btn-success detailsBtn">Details</a>
@@ -80,7 +76,8 @@ for (let i = 0; i < btns.length; i++) {
         <div class="card" style="width: 100%;">
         <img src="${users[i].picture}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">${users[i].name}, ${users[i].age}</h5>
+          <h5 class="card-title">${users[i].name}</h5>
+          <h6 class="card-title">${users[i].age}</h6>
           <p class="card-text myLikes">${users[i].likes}</p>
         </div>
       </div>
