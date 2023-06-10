@@ -9,6 +9,11 @@ $color_2: rgba(255, 255, 255, 0.4);
 	margin: 0;
 	box-sizing: border-box;
 }
+
+h5 {
+    font-weight: bold;
+}
+
 header {
 	i {
 		color: $color_1;
@@ -16,13 +21,15 @@ header {
 }
 .main-top {
 	position: relative;
-	height: 400px;
+	height: 350px;
 	background-image: url( https://cdn.pixabay.com/photo/2016/07/31/16/24/banner-1559400_1280.jpg);
 }
 .top-text {
 	color: $color_1;
 	background-color: $background-color_1;
-	padding: 40px;
+    font-size: 26px;
+    font-weight: bold;
+	padding: 50px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -32,14 +39,7 @@ header {
 .navbar-icon {
 	margin-right: 30px;
 	color: $color_1;
-	.badge {
-		position: absolute;
-		top: 10px;
-		right: 30px;
-		border-radius: 50%;
-		background: red;
-		color: $color_1;
-	}
+	
 }
 .container {
 	.containerheader {

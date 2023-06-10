@@ -87,7 +87,7 @@ function updateTaskDisplay() {
 		
 	const taskElement = document.createElement("div");
 	taskElement.className = "card";
-    
+
 	taskElement.innerHTML = `
 	<div class="card-header">
 	  <h5 class="title">TASK</h5>
@@ -117,7 +117,7 @@ function updateTaskDisplay() {
 	  </p>
 
 	  <p class="card-duration">
-		<i class="fa-sharp fa-regular fa-clock"></i> Duration: ${task.duration} min
+		<i class="fa-sharp fa-regular fa-clock"></i> Duration: ${task.duration} minutes
 	  </p>
 
 	  <hr class="line"/>
@@ -132,10 +132,10 @@ function updateTaskDisplay() {
 	</div>
 	`;
 
-		// --- add card to the result
+		// Here the card is added to the result
 		resultElement.appendChild(taskElement);
 
-		// --- add importancce button listener
+		// Here the eventListener for importance is added
 		const btnSuccess = taskElement.querySelector(".important-btn");
 		btnSuccess.addEventListener("click", function () {
 			if (task.importance < 5) {
@@ -145,7 +145,7 @@ function updateTaskDisplay() {
 			}
 		});
 
-		// --- update backgroundcolor by importance
+		// Here backgroundcolor by importance will be changed
 		changeBackgroundColor(task.importance, i);
 
 		const deleteButton = document.getElementsByClassName("btn-danger");
@@ -154,53 +154,41 @@ function updateTaskDisplay() {
 			let button = deleteButton[i];
 			button.addEventListener("click", function (event) {
 				let buttonClicked = event.target;
+                /* Here it will be removed after clicking the delete button */
 				buttonClicked.parentElement.parentElement.remove();
 			});
 		}
 	}
 }
 
-// change the background color based on importance
+// Here the background color will be changed in dependence of the importance
 function changeBackgroundColor(importance, index) {
 	const btn = document.getElementsByClassName("important-btn")[index];
+    /* Here from 0 to 1 it will be green */
 	if (importance >= 0 && importance <= 1) {
 		btn.style.backgroundColor = "green";
 		btn.style.color = "white";
+        /* Then from 2 to 3 it will be yellow */
 	} else if (importance >= 2 && importance <= 3) {
 		btn.style.backgroundColor = "yellow";
 		btn.style.color = "black";
+        /* In the end from 4 to 5 it will be red */
 	} else {
 		btn.style.backgroundColor = "red";
 		btn.style.color = "white";
 	}
 }
 
-// event listener to the sort button down
+// Here is the button_down for sorting
 const sortButtondown = document.getElementById("sort-buttondown");
 sortButtondown.addEventListener("click", sortByImportancedown);
 
-// event listener to the sort button up
+// Here is the button_up for sorting 
 const sortButtonup = document.getElementById("sort-buttonup");
 sortButtonup.addEventListener("click", sortByImportanceup);
 
-// update the display of tasks
+// Here the tasks will be updated
 updateTaskDisplay();
 
-//----------------------------------------
-// so much to do --- so many notifications
 
-const numberElement = document.getElementById("badge");
-
-let number = 0;
-
-function incrementNumber() {
-	number++;
-	numberElement.textContent = number;
-}
-
-function getRandomInterval() {
-	return Math.floor(Math.random() * 4000) + 1000;
-}
-
-setInterval(incrementNumber, getRandomInterval());
 
