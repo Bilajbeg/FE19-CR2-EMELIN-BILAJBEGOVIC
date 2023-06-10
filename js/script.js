@@ -90,7 +90,7 @@ function updateTaskDisplay() {
 
 	taskElement.innerHTML = `
 	<div class="card-header">
-	  <h5 class="title">TASK</h5>
+	  <h5 class="title"><button class="btn btn-primary">TASK</button></h5>
 	  <div class="right">
 		<i class="fa-regular fa-bookmark"></i>
 		<i class="fa-solid fa-ellipsis-vertical"></i>
