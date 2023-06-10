@@ -1,4 +1,4 @@
-let users = [
+let tasks = [
 {
     name: "Waking up morning<br>",
     age: "Washing face and teeth!!!",
@@ -42,14 +42,14 @@ let users = [
 }
 ];
 
-for (let user of users) {
+for (let task of tasks) {
     document.getElementById("result").innerHTML += `
     <div class="card" style="width: 18rem;">
-    <img src="${user.picture}" class="card-img-top" alt="...">
+    <img src="${task.picture}" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">${user.name}</h5>
-      <h6 class="card-title">${user.age}</h6>
-      <p class="card-text myLikes">${user.likes}</p>
+      <h5 class="card-title">${task.name}</h5>
+      <h6 class="card-title">${task.age}</h6>
+      <p class="card-text myLikes">${task.likes}</p>
       <a class="btn btn-primary myBtn">Like</a>
       <a class="btn btn-success detailsBtn">Details</a>
     </div>
@@ -63,8 +63,8 @@ let btns = document.getElementsByClassName("myBtn");
 for (let i in Array.from(btns)) {
     console.log(i)
     btns[i].addEventListener("click", function() {
-        users[i].likes++;
-        document.getElementsByClassName("myLikes")[i].innerHTML = users[i].likes;
+        tasks[i].likes++;
+        document.getElementsByClassName("myLikes")[i].innerHTML = tasks[i].likes;
     })
 }
 
@@ -74,11 +74,11 @@ for (let i = 0; i < btns.length; i++) {
     detailsBtns[i].addEventListener("click", function() {
         document.getElementById("details").innerHTML = `
         <div class="card" style="width: 100%;">
-        <img src="${users[i].picture}" class="card-img-top" alt="...">
+        <img src="${tasks[i].picture}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">${users[i].name}</h5>
-          <h6 class="card-title">${users[i].age}</h6>
-          <p class="card-text myLikes">${users[i].likes}</p>
+          <h5 class="card-title">${tasks[i].name}</h5>
+          <h6 class="card-title">${tasks[i].age}</h6>
+          <p class="card-text myLikes">${tasks[i].likes}</p>
         </div>
       </div>
         `;
