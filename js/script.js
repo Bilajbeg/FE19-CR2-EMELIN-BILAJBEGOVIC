@@ -1,68 +1,68 @@
 let tasks = [
-{
-    name: "Waking up morning<br>",
-    notiz: "Washing face and teeth!!!",
-    time: "06:00am",
-    picture: "/img/waking_up_in_the_morning.jpg",
-    importance: 0,
-	duration: 15,
-},{
-    name: "Morning run 30min.",
-    notiz: "Running around the park",
-    time: "06:15am",
-    picture: "/img/running.jpg",
-    importance: 0,
-	duration: 30,
-},{
-    name: "Taking breakfast",
-    notiz: "Muesli with fruit",
-    time: "07:00am",
-    picture: "/img/breakfast.jpg",
-    importance: 0,
-	duration: 30,
-}, {
-    name: "Going to work",
-    notiz: "Buy cup of coffee",
-    time: "07:30am",
-    picture: "/img/going_work.jpg",
-    importance: 0,
-	duration: 45,
-}, {
-    name: "Businness meeting",
-    notiz: "New stakeholder",
-    time: "14:30am",
-    picture: "/img/meeting.jpg",
-    importance: 0,
-	duration: 60,
-},{
-    name: "After work - Fitness",
-    notiz: "Cardio training 1hour",
-    time: "17:00am",
-    picture: "/img/firness.jpg",
-    importance: 0,
-	duration: 60,
-}, {
-    name: "Shopping",
-    notiz: "Avenue Mall",
-    time: "18:15am",
-    picture: "/img/shopping.jpg",
-    importance: 0,
-	duration: 45,
-}, {
-    name: "Dinner with family",
-    notiz: "Indian restaurant",
-    time: "19:30am",
-    picture: "/img/dinner.jpg",
-    importance: 0,
-	duration: 60,
-}, {
-    name: "Reading a book",
-    notiz: "Before sleep read something",
-    time: "21:30am",
-    picture: "/img/reading_bed_book.jpg",
-    importance: 0,
-	duration: 30,
-}
+	{
+		name: "Waking up morning<br>",
+		notiz: "Washing face and teeth!!!",
+		time: "06:00am",
+		picture: "img/waking_up_in_the_morning.jpg",
+		importance: 0,
+		duration: 15,
+	}, {
+		name: "Morning run 30min.",
+		notiz: "Running around the park",
+		time: "06:15am",
+		picture: "img/running.jpg",
+		importance: 0,
+		duration: 30,
+	}, {
+		name: "Taking breakfast",
+		notiz: "Muesli with fruit",
+		time: "07:00am",
+		picture: "img/breakfast.jpg",
+		importance: 0,
+		duration: 30,
+	}, {
+		name: "Going to work",
+		notiz: "Buy cup of coffee",
+		time: "07:30am",
+		picture: "img/going_work.jpg",
+		importance: 0,
+		duration: 45,
+	}, {
+		name: "Businness meeting",
+		notiz: "New stakeholder",
+		time: "14:30am",
+		picture: "img/meeting.jpg",
+		importance: 0,
+		duration: 60,
+	}, {
+		name: "After work - Fitness",
+		notiz: "Cardio training 1hour",
+		time: "17:00am",
+		picture: "img/firness.jpg",
+		importance: 0,
+		duration: 60,
+	}, {
+		name: "Shopping",
+		notiz: "Avenue Mall",
+		time: "18:15am",
+		picture: "img/shopping.jpg",
+		importance: 0,
+		duration: 45,
+	}, {
+		name: "Dinner with family",
+		notiz: "Indian restaurant",
+		time: "19:30am",
+		picture: "img/dinner.jpg",
+		importance: 0,
+		duration: 60,
+	}, {
+		name: "Reading a book",
+		notiz: "Before sleep read something",
+		time: "21:30am",
+		picture: "img/reading_bed_book.jpg",
+		importance: 0,
+		duration: 30,
+	}
 ];
 
 // Here is the function to sort the importance
@@ -78,17 +78,17 @@ function sortByImportanceup() {
 
 function updateTaskDisplay() {
 	const resultElement = document.getElementById("result");
-    //  Now the result will be cleared
-	resultElement.innerHTML = ""; 
+	//  Now the result will be cleared
+	resultElement.innerHTML = "";
 
 	for (let i = 0; i < tasks.length; i++) {
 		const task = tasks[i];
 
-		
-	const taskElement = document.createElement("div");
-	taskElement.className = "card";
 
-	taskElement.innerHTML = `
+		const taskElement = document.createElement("div");
+		taskElement.className = "card";
+
+		taskElement.innerHTML = `
 	<div class="card-header">
 	  <h5 class="title"><button class="btn btn-primary">TASK</button></h5>
 	  <div class="right">
@@ -154,7 +154,7 @@ function updateTaskDisplay() {
 			let button = deleteButton[i];
 			button.addEventListener("click", function (event) {
 				let buttonClicked = event.target;
-                /* Here it will be removed after clicking the delete button */
+				/* Here it will be removed after clicking the delete button */
 				buttonClicked.parentElement.parentElement.remove();
 			});
 		}
@@ -164,15 +164,15 @@ function updateTaskDisplay() {
 // Here the background color will be changed in dependence of the importance
 function changeBackgroundColor(importance, index) {
 	const btn = document.getElementsByClassName("important-btn")[index];
-    /* Here from 0 to 1 it will be green */
+	/* Here from 0 to 1 it will be green */
 	if (importance >= 0 && importance <= 1) {
 		btn.style.backgroundColor = "green";
 		btn.style.color = "white";
-        /* Then from 2 to 3 it will be yellow */
+		/* Then from 2 to 3 it will be yellow */
 	} else if (importance >= 2 && importance <= 3) {
 		btn.style.backgroundColor = "yellow";
 		btn.style.color = "black";
-        /* In the end from 4 to 5 it will be red */
+		/* In the end from 4 to 5 it will be red */
 	} else {
 		btn.style.backgroundColor = "red";
 		btn.style.color = "white";
