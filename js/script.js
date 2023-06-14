@@ -127,7 +127,7 @@ function updateTaskDisplay() {
         </button>
 
 	  <button type="button" class="btn btn-success">
-		<i class="fa-regular fa-circle-check"></i>Done
+		<i class="fa-regular fa-circle-check"></i>Done<
         </button>
 	</div>
 	`;
